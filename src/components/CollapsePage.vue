@@ -40,9 +40,7 @@ export default {
   },
   methods: {
     show(item) {
-      setTimeout(() => {
-        item.isShow = !item.isShow;
-      }, 100);
+      item.isShow = !item.isShow;
     },
   },
 };
@@ -55,6 +53,7 @@ export default {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  float: left;
   .title {
     height: 50px;
   }

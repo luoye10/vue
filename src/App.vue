@@ -17,17 +17,23 @@
     <div>{{ text }}</div>
     <div>{{ item }}</div>
     <collapse-page></collapse-page>
+    <layer-page></layer-page>
+    <floor-page></floor-page>
   </div>
 </template>
 <script>
 import MainPage from './components/MainPage.vue';
 import HomePage from './components/HomePage.vue';
 import CollapsePage from './components/CollapsePage.vue';
+import LayerPage from './components/LayerPage.vue';
+import FloorPage from './components/FloorPage.vue';
 export default {
   components: {
     MainPage,
     HomePage,
     CollapsePage,
+    LayerPage,
+    FloorPage,
   },
   provide() {
     return {
