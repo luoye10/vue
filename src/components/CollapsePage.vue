@@ -93,7 +93,6 @@ export default {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  float: left;
   .title {
     height: 50px;
   }

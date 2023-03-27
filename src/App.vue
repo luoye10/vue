@@ -1,39 +1,22 @@
 <template>
   <div id="app">
-    <div>{{ massage }}</div>
-    <button @click="change">点击修改</button>
-    <div>{{ obj }}</div>
-    <button @click="propertyChange">修改</button>
-    <main-page name="jack" ref="item">
-      <template #default="obj">{{ obj.text + obj.abc }}</template>
-    </main-page>
-    <home-page name="lucy" age="20" @add="handle">
-      <div slot="head">头部</div>
-      <div class="bottom" slot="bottom">
-        <div>底部内容</div>
-      </div>
-      <div>没有插槽</div>
-    </home-page>
-    <div>{{ text }}</div>
-    <div>{{ item }}</div>
     <collapse-page></collapse-page>
     <layer-page></layer-page>
     <floor-page></floor-page>
+    <drop-down></drop-down>
   </div>
 </template>
 <script>
-import MainPage from './components/MainPage.vue';
-import HomePage from './components/HomePage.vue';
 import CollapsePage from './components/CollapsePage.vue';
 import LayerPage from './components/LayerPage.vue';
 import FloorPage from './components/FloorPage.vue';
+import DropDown from './components/DropDown.vue';
 export default {
   components: {
-    MainPage,
-    HomePage,
     CollapsePage,
     LayerPage,
     FloorPage,
+    DropDown,
   },
   provide() {
     return {
@@ -55,6 +38,8 @@ export default {
       },
       text: '',
       item: {},
+      items: [1, 2, 3],
+      isShow: false,
     };
   },
   mounted() {
@@ -62,6 +47,9 @@ export default {
     this.item = this.$refs.item.obj;
   },
   methods: {
+    show() {
+      this.isShow = !this.isShow;
+    },
     change() {
       this.massage = '修改后的值';
       console.log(this.$el.textContent);

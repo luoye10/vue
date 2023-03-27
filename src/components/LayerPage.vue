@@ -84,7 +84,6 @@ export default {
   border: 1px solid #dadada;
   margin: 20px;
   padding: 20px;
-  float: left;
   display: flex;
   flex-direction: column;
   .head {
