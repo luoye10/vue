@@ -1,14 +1,21 @@
 <template>
   <div class="box">
     <div class="text">基础用法</div>
-    <div class="test" @mouseenter="open" ref="test" @mouseout="recover">
+    <div
+      :class="['test', { active: isHover }, { add: isAdd }]"
+      @mouseenter="open"
+      @mouseout="recover"
+      @click="add"
+    >
       找个地方休息
     </div>
-    <ul class="itemList" v-show="isShow">
-      <li class="item" v-for="item in items" :key="item.massage" @click="show">
-        {{ item }}
-      </li>
-    </ul>
+    <transition name="zyh">
+      <ul class="itemList" v-show="isShow">
+        <li class="item" v-for="item in items" :key="item.massage">
+          {{ item }}
+        </li>
+      </ul>
+    </transition>
   </div>
 </template>
 <script>
@@ -16,21 +23,30 @@ export default {
   data() {
     return {
       items: [
+        '滨海湾金沙，新加坡',
         '布朗酒店，伦敦',
         '亚特兰蒂斯巴哈马，拿骚',
         '比利福山庄酒店，洛杉矶',
       ],
       isShow: false,
+      isHover: false,
+      isAdd: false,
     };
   },
   methods: {
     open() {
-      this.$refs.test.classList.add('active');
+      this.isHover = true;
       this.isShow = true;
     },
     recover() {
-      this.$refs.test.classList.remove('active');
+      this.isHover = false;
       this.isShow = false;
+    },
+    add() {
+      this.isAdd = true;
+      setTimeout(() => {
+        this.isAdd = false;
+      }, 100);
     },
     show() {},
   },
@@ -43,17 +59,17 @@ export default {
   border-radius: 5px;
   border: 1px solid #dadada;
   padding: 20px;
-  margin: 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  margin: 20px;
   .test {
-    width: 100px;
+    width: 120px;
+    height: 40px;
     border: 1px solid #dadada;
     border-radius: 3px;
-    padding: 10px;
-    margin: 30px 0;
+    text-align: center;
+    line-height: 40px;
+    margin: 20px 0;
     cursor: pointer;
+    transition: all 0.2s;
   }
   .itemList {
     width: 200px;
@@ -61,7 +77,8 @@ export default {
     background: whitesmoke;
     border-radius: 3px;
     padding: 10px;
-    margin-top: -20px;
+    margin-top: -10px;
+    margin-left: -20px;
     display: flex;
     flex-direction: column;
     .item {
@@ -70,9 +87,20 @@ export default {
       cursor: pointer;
     }
   }
-}
-.active {
-  border: 1px solid greenyellow;
-  color: greenyellow;
+  .active {
+    border: 1px solid greenyellow;
+    color: greenyellow;
+  }
+  .add {
+    box-shadow: 0 0 2px 2px greenyellow;
+  }
+  .zyh-enter-active,
+  .zyh-leave-active {
+    transition: opacity 0.5s;
+  }
+  .zyh-enter,
+  .zyh-leave-to {
+    opacity: 0;
+  }
 }
 </style>

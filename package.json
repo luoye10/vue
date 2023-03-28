@@ -25,6 +25,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "bignumber.js": "^9.1.1",
     "element-ui": "^2.13.2",
     "postcss-loader": "^3.0.0",
     "vue": "^2.6.11",
