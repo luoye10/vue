@@ -30,7 +30,6 @@ export default {
 <style lang="less" scoped>
 .container {
   width: 200px;
-  height: 100px;
   padding: 20px;
   margin: 20px;
   border: 1px solid #dadada;

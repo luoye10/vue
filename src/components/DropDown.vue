@@ -138,14 +138,12 @@ export default {
 }
 .box {
   width: 300px;
-  height: 100px;
   border-radius: 5px;
   border: 1px solid #dadada;
   padding: 20px;
   margin: 20px;
   .test {
     width: 120px;
-    height: 40px;
     border: 1px solid #dadada;
     border-radius: 3px;
     text-align: center;
