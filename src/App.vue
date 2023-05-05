@@ -12,6 +12,7 @@
       </template>
     </show-tip>
     <button @click="change">按钮</button>
+    <file-upload></file-upload>
   </div>
 </template>
 <script>
@@ -22,6 +23,7 @@ import DropDown from './components/DropDown.vue';
 import TextEllipsis from './components/TextEllipsis.vue';
 import ShowTip from './components/ShowTip.vue';
 import TextPage from './components/TextPage.vue';
+import FileUpload from './components/FileUpload.vue';
 export default {
   components: {
     CollapsePage,
@@ -31,6 +33,7 @@ export default {
     TextEllipsis,
     ShowTip,
     TextPage,
+    FileUpload,
   },
   data() {
     return {
