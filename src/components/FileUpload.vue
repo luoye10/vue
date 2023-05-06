@@ -36,34 +36,38 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-#list {
-  width: 0;
-  height: 0;
-}
-.test {
-  margin: 10px 20px;
-}
 .item {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #dadada;
   display: flex;
   text-align: center;
-  line-height: 50px;
-}
-.select {
-  width: 100px;
-  height: 50px;
-  background: #409eff;
-  color: white;
-  border-radius: 5px;
-  margin-top: -50px;
-  cursor: pointer;
-}
-.btn {
-  width: 100px;
-  height: 50px;
-  background: #409eff;
-  color: white;
-  border-radius: 5px;
-  margin: 10px 20px;
-  cursor: pointer;
+  line-height: 40px;
+  margin: 20px;
+  .test {
+    margin: 10px;
+    #list {
+      width: 0;
+      height: 0;
+    }
+    .select {
+      width: 100px;
+      height: 40px;
+      background: #409eff;
+      color: white;
+      border-radius: 5px;
+      margin-top: -40px;
+      cursor: pointer;
+    }
+  }
+  .btn {
+    width: 100px;
+    height: 40px;
+    background: #67c23a;
+    color: white;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+  }
 }
 </style>
